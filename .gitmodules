@@ -1,0 +1,3 @@
+[submodule "ts-skills"]
+	path = ts-skills
+	url = https://github.com/the-shop/ts-skills.git
