@@ -6,6 +6,7 @@ Public tools and practices from The Shop. This repository pins independently mai
 
 | Project | Purpose | Repository |
 | --- | --- | --- |
+| osx-window-manager | Menu-bar macOS window tiling; unmaintained AI experiment (macOS 14+, Apple Silicon) | [the-shop/osx-window-manager](https://github.com/the-shop/osx-window-manager) |
 | TS Skills | Eight portable engineering discipline skills with TOON references | [the-shop/ts-skills](https://github.com/the-shop/ts-skills) |
 
 To install skills directly, use the child repository:
@@ -27,7 +28,27 @@ If you already cloned without submodules:
 git submodule update --init --recursive
 ```
 
-The workspace contains `ts-skills` as a pinned Git submodule, not a copied directory. You can also clone [ts-skills](https://github.com/the-shop/ts-skills) independently.
+The workspace pins `ts-skills` and `osx-window-management` as Git submodules. Each can also be cloned independently from its repository above.
+
+## macOS window manager
+
+The `osx-window-management` directory contains [osx-window-manager](https://github.com/the-shop/osx-window-manager). See its [README](osx-window-management/README.md) for installation, Accessibility permission, shortcuts, and Launch at Login; the [site and demo](https://the-shop.github.io/osx-window-manager/) and [changelog](osx-window-management/CHANGELOG.md) cover features and history.
+
+On Apple Silicon with macOS 14 or newer, open the packaged app from this workspace:
+
+```sh
+open osx-window-management/dist/osx-window-manager.app
+```
+
+To validate a source build on macOS:
+
+```sh
+cd osx-window-management
+swift build
+python3 scripts/matrix_test.py
+```
+
+The window manager remains an unmaintained AI experiment. Its existing bundle identifier and settings are preserved. The former personal repository now points to the canonical The Shop repository.
 
 ## Validate the pinned skills
 
@@ -54,4 +75,4 @@ Review local changes before switching the child checkout. Avoid automatically fo
 
 ## License
 
-The parent documentation is [MIT-licensed](LICENSE). Each child project carries its own license; TS Skills is also MIT-licensed.
+The parent documentation is [MIT-licensed](LICENSE). Each child project carries its own license; both TS Skills and osx-window-manager are MIT-licensed.

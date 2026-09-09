@@ -1,3 +1,6 @@
 [submodule "ts-skills"]
 	path = ts-skills
 	url = https://github.com/the-shop/ts-skills.git
+[submodule "osx-window-management"]
+	path = osx-window-management
+	url = https://github.com/the-shop/osx-window-manager.git
