@@ -4,3 +4,6 @@
 [submodule "osx-window-management"]
 	path = osx-window-management
 	url = https://github.com/the-shop/osx-window-manager.git
+[submodule "doom-mac"]
+	path = doom-mac
+	url = https://github.com/the-shop/doom-mac.git

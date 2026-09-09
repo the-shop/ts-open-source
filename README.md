@@ -6,6 +6,7 @@ Public tools and practices from The Shop. This repository pins independently mai
 
 | Project | Purpose | Repository |
 | --- | --- | --- |
+| DOOM-Mac | Original Doom-style FPS in C for macOS, with procedural assets | [the-shop/doom-mac](https://github.com/the-shop/doom-mac) |
 | osx-window-manager | Menu-bar macOS window tiling; unmaintained AI experiment (macOS 14+, Apple Silicon) | [the-shop/osx-window-manager](https://github.com/the-shop/osx-window-manager) |
 | TS Skills | Eight portable engineering discipline skills with TOON references | [the-shop/ts-skills](https://github.com/the-shop/ts-skills) |
 
@@ -28,7 +29,7 @@ If you already cloned without submodules:
 git submodule update --init --recursive
 ```
 
-The workspace pins `ts-skills` and `osx-window-management` as Git submodules. Each can also be cloned independently from its repository above.
+The workspace pins `ts-skills`, `osx-window-management`, and `doom-mac` as Git submodules. Each can also be cloned independently from its repository above.
 
 ## macOS window manager
 
@@ -49,6 +50,19 @@ python3 scripts/matrix_test.py
 ```
 
 The window manager remains an unmaintained AI experiment. Its existing bundle identifier and settings are preserved. The former personal repository now points to the canonical The Shop repository.
+
+## DOOM-Mac
+
+The `doom-mac` submodule contains an original C game with procedurally generated assets. See its [README](doom-mac/README.md) for controls and known limitations, or download the Apple Silicon binaries (macOS 12+) from [Releases](https://github.com/the-shop/doom-mac/releases).
+
+To build and run its headless tests on macOS:
+
+```sh
+cd doom-mac
+brew install sdl2
+make
+make test
+```
 
 ## Validate the pinned skills
 
@@ -75,4 +89,4 @@ Review local changes before switching the child checkout. Avoid automatically fo
 
 ## License
 
-The parent documentation is [MIT-licensed](LICENSE). Each child project carries its own license; both TS Skills and osx-window-manager are MIT-licensed.
+The parent documentation is [MIT-licensed](LICENSE). Each child project carries its own license; TS Skills, osx-window-manager, and DOOM-Mac are MIT-licensed.
