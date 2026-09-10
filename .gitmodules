@@ -7,3 +7,6 @@
 [submodule "doom-mac"]
 	path = doom-mac
 	url = https://github.com/the-shop/doom-mac.git
+[submodule "pi-the-shop"]
+	path = pi-the-shop
+	url = https://github.com/the-shop/pi-the-shop.git
