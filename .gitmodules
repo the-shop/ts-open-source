@@ -10,3 +10,6 @@
 [submodule "pi-the-shop"]
 	path = pi-the-shop
 	url = https://github.com/the-shop/pi-the-shop.git
+[submodule "pi-browser-search"]
+	path = pi-browser-search
+	url = https://github.com/the-shop/pi-browser-search.git
