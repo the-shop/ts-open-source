@@ -82,6 +82,40 @@ To try the pinned workspace checkout, run from the workspace root:
 pi -e ./pi-the-shop/index.ts
 ```
 
+## pi-browser-search
+
+The `pi-browser-search` submodule contains the headless-browser web search
+extension for the pi coding agent: Google and DuckDuckGo fan-out with no API
+keys. It needs Chrome and Node.js 22 or newer. See its
+[README](pi-browser-search/README.md) for engine behaviour, the Google trust
+import, and the test suite.
+
+Install the child repository:
+
+```sh
+pi install git:github.com/the-shop/pi-browser-search
+```
+
+To try the pinned workspace checkout instead, run from the workspace root:
+
+```sh
+pi -e ./pi-browser-search/index.ts
+```
+
+The design record and the measurements behind the engine decisions are in
+[browser-search-plan.md](browser-search-plan.md) — historical, kept as evidence.
+
+### Research agents
+
+`.pi/agents/` carries two project-local pi subagents used to compare search
+backends: `web-researcher` (this repo's `ts_web_search`/`ts_fetch_content`) and
+`tf-researcher` (TinyFish). Both load their provider only into the child
+session. `tf-researcher` needs `TINYFISH_API_KEY`, which
+[`.pi/tinyfish-env.ts`](.pi/tinyfish-env.ts) reads from
+`~/.pi/agent/secrets/tinyfish.env` (chmod 600, outside this repository — see the
+secret-scan below). Without it the tools fail with the SDK's own missing-key
+error.
+
 ## Validate the pinned skills
 
 ```sh

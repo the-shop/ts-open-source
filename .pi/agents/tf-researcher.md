@@ -2,7 +2,7 @@
 name: tf-researcher
 description: Research subagent that searches with TinyFish (tinyfish_search / tinyfish_fetch).
 tools: read, write, tinyfish_search, tinyfish_fetch
-subagentOnlyExtensions: /Users/lotar/projects/ts-open-source/.pi/tinyfish-env.ts
+subagentOnlyExtensions: .pi/tinyfish-env.ts
 thinking: medium
 systemPromptMode: replace
 inheritProjectContext: false

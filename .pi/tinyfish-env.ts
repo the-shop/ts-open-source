@@ -12,6 +12,7 @@
 import { readFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
+import { pathToFileURL } from "node:url";
 
 if (!process.env.TINYFISH_API_KEY) {
 	try {
@@ -23,4 +24,10 @@ if (!process.env.TINYFISH_API_KEY) {
 	}
 }
 
-export { default } from "/Users/lotar/.pi/agent/npm/node_modules/pi-tinyfish/index.ts";
+// Resolved from the home directory rather than an absolute path, so a clone on
+// another machine finds its own install. `pi install npm:pi-tinyfish` puts the
+// package here for any user. A dynamic import is required because a re-export
+// (`export { default } from ...`) only accepts a string literal.
+const plugin = join(homedir(), ".pi", "agent", "npm", "node_modules", "pi-tinyfish", "index.ts");
+const { default: tinyfishPlugin } = await import(pathToFileURL(plugin).href);
+export default tinyfishPlugin;

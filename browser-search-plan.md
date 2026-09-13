@@ -68,7 +68,12 @@ Google extraction quality with the real profile — 3/3 queries, **~4.1 s each, 
 
 ---
 
-## 3. Google at 70% — RESOLVED, self-contained bootstrap
+## 3. Google at 70% — the cookie bootstrap (historical)
+
+*(Post-implementation: the shipped bootstrap imports exactly `NID` + `SOCS`,
+read-only, from a browser profile Google already trusts. `AEC` turned out
+irrelevant, and a freshly minted `NID` does not age into trust. See
+`pi-browser-search/README.md`.)*
 
 Google works through a **warmed profile**, so the question was what "warmed" actually means. Isolated by experiment (each row = 2 queries; profile rebuilt from scratch each time):
 
