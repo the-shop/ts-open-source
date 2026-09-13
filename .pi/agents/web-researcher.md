@@ -1,7 +1,7 @@
 ---
 name: web-researcher
 description: Research subagent that searches the web with the browser-based engine. Use for questions needing current prices, availability, or any fact that must be verified against live pages.
-tools: read, write, web_search, fetch_content, get_search_content
+tools: read, write, ts_web_search, ts_fetch_content, ts_get_search_content
 subagentOnlyExtensions: /Users/lotar/.pi/agent/git/github.com/the-shop/pi-browser-search/index.ts
 thinking: medium
 systemPromptMode: replace

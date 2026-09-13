@@ -8,6 +8,7 @@ Public tools and practices from The Shop. This repository pins independently mai
 | --- | --- | --- |
 | DOOM-Mac | Original Doom-style FPS in C for macOS, with procedural assets | [the-shop/doom-mac](https://github.com/the-shop/doom-mac) |
 | osx-window-manager | Menu-bar macOS window tiling; unmaintained AI experiment (macOS 14+, Apple Silicon) | [the-shop/osx-window-manager](https://github.com/the-shop/osx-window-manager) |
+| pi-browser-search | Headless-browser web search for the pi coding agent; Google/DuckDuckGo fan-out, no API keys | [the-shop/pi-browser-search](https://github.com/the-shop/pi-browser-search) |
 | pi-the-shop | Performance counters, run time, and message timestamps for the pi coding agent | [the-shop/pi-the-shop](https://github.com/the-shop/pi-the-shop) |
 | TS Skills | Eight portable engineering discipline skills with TOON references | [the-shop/ts-skills](https://github.com/the-shop/ts-skills) |
 
@@ -30,7 +31,7 @@ If you already cloned without submodules:
 git submodule update --init --recursive
 ```
 
-The workspace pins `ts-skills`, `osx-window-management`, `doom-mac`, and `pi-the-shop` as Git submodules. Each can also be cloned independently from its repository above.
+The workspace pins `ts-skills`, `osx-window-management`, `doom-mac`, `pi-the-shop`, and `pi-browser-search` as Git submodules. Each can also be cloned independently from its repository above.
 
 ## macOS window manager
 
@@ -106,4 +107,4 @@ Review local changes before switching the child checkout. Avoid automatically fo
 
 ## License
 
-The parent documentation is [MIT-licensed](LICENSE). Each child project carries its own license; TS Skills, osx-window-manager, DOOM-Mac, and pi-the-shop are MIT-licensed.
+The parent documentation is [MIT-licensed](LICENSE). Each child project carries its own license; TS Skills, osx-window-manager, DOOM-Mac, pi-the-shop, and pi-browser-search are MIT-licensed.

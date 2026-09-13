@@ -1,6 +1,10 @@
 # Plan — `web_search` replacement using a headless browser
 
-**Status:** investigation complete, Google lane **resolved and proven** (§3), awaiting go/no-go on delivery decisions (§9)
+**Status:** historical design record — the implementation shipped as the
+[`pi-browser-search`](pi-browser-search/README.md) submodule. The body is kept as the
+measurement trail (why the cookie imports and the pacing exist, and what was ruled
+out); **current facts live in the submodule README**, and §9's "decisions needed"
+are closed, not open.
 **Target:** replace the `web_search` tool currently served by `npm:pi-web-access`
 **Spec from owner:** ≥10 searches per `web_search` call, more when precision demands it;
 engine mix **Google 70% / DuckDuckGo 20% / Bing 10%**; headless browser does the searching and scraping.
