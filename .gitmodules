@@ -16,3 +16,6 @@
 [submodule "pi-cursor-provider"]
 	path = pi-cursor-provider
 	url = https://github.com/the-shop/pi-cursor-provider.git
+[submodule "deepseek-v4.1-flash-1017-motion-sites-demo"]
+	path = deepseek-v4.1-flash-1017-motion-sites-demo
+	url = https://github.com/the-shop/deepseek-v4.1-flash-1017-motion-sites-demo.git
