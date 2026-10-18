@@ -52,8 +52,11 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 22
-      - name: Scan every tree for committed secrets
-        run: node pi-cursor-provider/tools/secret-scan.mjs
+      # The provider's scanner targets its own tree; from the workspace root it
+      # would also flag other submodules' fixtures (icon@2x names, a@b.com).
+      - name: Scan the provider tree for committed secrets
+        run: node tools/secret-scan.mjs
+        working-directory: pi-cursor-provider
       - run: npm test
         working-directory: pi-cursor-provider
       - run: npm run test:e2e
