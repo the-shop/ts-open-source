@@ -13,3 +13,6 @@
 [submodule "pi-browser-search"]
 	path = pi-browser-search
 	url = https://github.com/the-shop/pi-browser-search.git
+[submodule "pi-cursor-provider"]
+	path = pi-cursor-provider
+	url = https://github.com/the-shop/pi-cursor-provider.git

@@ -9,6 +9,7 @@ Public tools and practices from The Shop. This repository pins independently mai
 | DOOM-Mac | Original Doom-style FPS in C for macOS, with procedural assets | [the-shop/doom-mac](https://github.com/the-shop/doom-mac) |
 | osx-window-manager | Menu-bar macOS window tiling; unmaintained AI experiment (macOS 14+, Apple Silicon) | [the-shop/osx-window-manager](https://github.com/the-shop/osx-window-manager) |
 | pi-browser-search | Headless-browser web search for the pi coding agent; Google/DuckDuckGo fan-out, no API keys | [the-shop/pi-browser-search](https://github.com/the-shop/pi-browser-search) |
+| pi-cursor-provider | Cursor subscription models for the pi coding agent; live `cursor-agent` catalog discovery and streamed CLI turns | [the-shop/pi-cursor-provider](https://github.com/the-shop/pi-cursor-provider) |
 | pi-the-shop | Performance counters, run time, and message timestamps for the pi coding agent | [the-shop/pi-the-shop](https://github.com/the-shop/pi-the-shop) |
 | TS Skills | Eight portable engineering discipline skills with TOON references | [the-shop/ts-skills](https://github.com/the-shop/ts-skills) |
 
@@ -31,7 +32,7 @@ If you already cloned without submodules:
 git submodule update --init --recursive
 ```
 
-The workspace pins `ts-skills`, `osx-window-management`, `doom-mac`, `pi-the-shop`, and `pi-browser-search` as Git submodules. Each can also be cloned independently from its repository above.
+The workspace pins `ts-skills`, `osx-window-management`, `doom-mac`, `pi-the-shop`, `pi-browser-search`, and `pi-cursor-provider` as Git submodules. Each can also be cloned independently from its repository above.
 
 ## macOS window manager
 
@@ -116,6 +117,28 @@ session. `tf-researcher` needs `TINYFISH_API_KEY`, which
 secret-scan below). Without it the tools fail with the SDK's own missing-key
 error.
 
+## pi-cursor-provider
+
+The `pi-cursor-provider` submodule contains the Cursor CLI provider for the
+[pi](https://github.com/earendil-works/pi) coding agent. It discovers the Cursor subscription catalog through
+`cursor-agent --list-models` and streams each turn through the CLI, so the
+account's Cursor models are selectable as `/model cursor/<family>`. It needs the
+`cursor-agent` binary, an existing Cursor login, and Node.js 22.6 or newer. See
+its [README](pi-cursor-provider/README.md) for configuration, the `--force`
+default, and the `CURSOR_PI_NO_FORCE` opt-out.
+
+Install the published package:
+
+```sh
+pi install git:github.com/the-shop/pi-cursor-provider
+```
+
+To try the pinned workspace checkout, run from the workspace root:
+
+```sh
+pi -e ./pi-cursor-provider
+```
+
 ## Validate the pinned skills
 
 ```sh
@@ -141,4 +164,4 @@ Review local changes before switching the child checkout. Avoid automatically fo
 
 ## License
 
-The parent documentation is [MIT-licensed](LICENSE). Each child project carries its own license; TS Skills, osx-window-manager, DOOM-Mac, pi-the-shop, and pi-browser-search are MIT-licensed.
+The parent documentation is [MIT-licensed](LICENSE). Each child project carries its own license; TS Skills, osx-window-manager, DOOM-Mac, pi-the-shop, pi-browser-search, and pi-cursor-provider are MIT-licensed.

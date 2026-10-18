@@ -40,3 +40,21 @@ jobs:
         working-directory: pi-browser-search
       - run: npm test
         working-directory: pi-browser-search
+
+  # Dependency-free: no install, no Cursor login, no quota. The stub e2e drives
+  # the provider through the same code path as the real CLI.
+  cursor-provider:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+      - name: Scan every tree for committed secrets
+        run: node pi-cursor-provider/tools/secret-scan.mjs
+      - run: npm test
+        working-directory: pi-cursor-provider
+      - run: npm run test:e2e
+        working-directory: pi-cursor-provider
