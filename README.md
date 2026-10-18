@@ -124,7 +124,7 @@ npm ci --ignore-scripts
 npm run check
 ```
 
-Node.js 20 or newer is needed for these maintainer checks. Using the skill instructions requires only a compatible agent that can read their files. The child README documents installation, compatibility, examples, and release evidence.
+Node.js 20 or newer and Python 3.8 or newer are needed for these maintainer checks; Python runs the `ts-handoff` merge script's tests. Using the skill instructions requires only a compatible agent that can read their files. The child README documents installation, compatibility, examples, and release evidence.
 
 ## Update a submodule deliberately
 
@@ -132,9 +132,9 @@ From the parent checkout, select the child release you want to pin:
 
 ```sh
 git -C ts-skills fetch origin --tags
-git -C ts-skills checkout v0.1.0
+git -C ts-skills checkout v0.2.0
 git add ts-skills
-git commit -m "Pin TS Skills v0.1.0"
+git commit -m "Pin TS Skills v0.2.0"
 ```
 
 Review local changes before switching the child checkout. Avoid automatically following a moving branch: the parent commit should identify a tested child commit. When pulling parent updates, run `git submodule update --init --recursive` afterward.
