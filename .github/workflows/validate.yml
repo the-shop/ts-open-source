@@ -13,7 +13,7 @@ jobs:
           submodules: recursive
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
           cache-dependency-path: ts-skills/package-lock.json
       - run: npm ci --ignore-scripts --no-audit --no-fund
@@ -33,7 +33,7 @@ jobs:
           submodules: recursive
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: 22
+          node-version: 24
       - name: Scan every tree for committed secrets
         run: node pi-browser-search/tools/secret-scan.mjs
       - run: npm install --no-audit --no-fund
@@ -51,7 +51,7 @@ jobs:
           submodules: recursive
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: 22
+          node-version: 24
       # The provider's scanner targets its own tree; from the workspace root it
       # would also flag other submodules' fixtures (icon@2x names, a@b.com).
       - name: Scan the provider tree for committed secrets
